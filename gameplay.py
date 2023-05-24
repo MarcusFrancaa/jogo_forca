@@ -14,10 +14,8 @@ while novo_jogo == 1:
     resp = int(input("Com qual tema você deseja jogar?"))
     palavra = randompalavra(resp)
     print(f"Muito bem, a palavra tem {len(palavra)} letras")
-    #print(f"Numero de palavras{(len(palavra))}")
     while True:
         acertos = 0
-
         tentativa=input("Digite uma letra: ") #Gameplay e controle das chances
         letras_usuario.append(tentativa)
         for letra in palavra:
@@ -28,14 +26,11 @@ while novo_jogo == 1:
                 print("_", end= " ")
         #print(chances)
         print()
-        #'print(f"Numero de acertos {acertos}")
         if tentativa not in palavra:
             chances -= 1
         if acertos == len(palavra): #VERIFICAÇÃO DE GANHO ANTES DE ACABAR AS CHANCES
             print("PARABÉNS VOCÊ GANHOU!!!!")
             break
-        #print(letras_usuario)
-
         if chances == 0: #Verificação se ganhou ou perdeu depois de todas as chances
             resposta_final=input("Todas as chances acabaram, mas vou te dar um bônus\n Qual a palavra?")
             if resposta_final == palavra.lower():
